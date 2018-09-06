@@ -1,0 +1,71 @@
+<div class="banner-image" >
+    <div class="blog-section">
+        <div class="container hidden-xs">
+            <ul class="home-social">
+                <li>
+                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="model">
+
+    <h2 class="text-center">LATEST BLOGS</h2>
+    <div class="blog">
+    <div *ngFor="let record of model; let i = index;">
+
+        <div *ngIf="i % 2 ==0; then left else right"></div>
+
+        <ng-template #left>
+            <div class="row">
+                <div class="col-md-6 col-xs-6">
+                    <a href="blog/{{record.id}}"> <img src="{{record.image}}" class="img-responsive"></a>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <div class="panel-left">
+                        <a href="blog/{{record.id}}">
+                            <h3>{{record.name}}</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #right>
+            <div class="row res-padd">
+                <div class="col-md-6 col-xs-6">
+                    <div class="panel-right">
+                        
+                            <a href="blog/{{record.id}}">
+                                <h3>{{record.name}}</h3>                                
+                            </a>
+                      
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6">
+                    <a href="blog/{{record.id}}"><img src="{{record.image}}" class="img-responsive"></a>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+    <div *ngIf="loading" style="color: #fff;">
+        <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+    </div>
+
+    <div class="search-results" infiniteScroll [infiniteScrollDistance]="3" [infiniteScrollUpDistance]="3" [infiniteScrollThrottle]="3000" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()">
+    </div>
+
+
+</div>

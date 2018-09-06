@@ -1,0 +1,20 @@
+.blog-detail-banner {
+    /* The image used */
+    background-image: url("../../../../assets/img/banner/Blog1500X500.jpg");
+    /* Set a specific height */
+    min-height: 550px;
+    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1000px) {
+    .blog-detail-banner {
+        background-attachment: scroll;
+    }
+}
+.blog-heading h2 {
+    color: #4ecbff;
+}

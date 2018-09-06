@@ -1,0 +1,91 @@
+.project-section {
+    /* The image used */
+    background-image: url("../../../../assets/img/banner/Our-Work.jpg");
+    /* Set a specific height */
+    min-height: 550px;
+    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1000px) {
+    .project-section {
+        background-attachment: scroll;
+    }
+}
+h2 {
+    color: #4ecbff;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+h3 {
+    color: #000;
+}
+.blog {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    margin-left: 5vw;
+}
+
+.blog .panel-left {
+    position: relative;
+    display: block;
+    top: 60px;
+    right: 4vw;
+    padding: 20px 54px;
+    background: #000;
+}
+
+.blog .panel-left a {
+    text-decoration: none;
+}
+.blog .panel-left a h3 {
+    color: #fff!important;
+}
+
+
+.blog .panel-right {
+    position: relative;
+    display: block;
+    top: 60px;
+    right: -3vw;
+    padding: 20px 54px;
+    background: #000;
+}
+
+.blog .panel-right a {
+    text-decoration: none;
+}
+.blog .panel-right a h3 {
+    color: #fff!important;
+}
+@media (max-width: 990px) {
+    .blog {
+        width: 100%;
+        margin-left: 0%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+    .blog .panel-left {
+        position: relative;
+        top: 50px;
+        right: 8vw;
+        padding: 10px 20px;
+    }
+    .blog .panel-right {
+        position: relative;
+        top: 50px;
+        left: 8vw;
+        right: 0;
+        padding: 10px 20px;
+    }
+    .col-md-6 a img {
+        height: 210px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    
+}

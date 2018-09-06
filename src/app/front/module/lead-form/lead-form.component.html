@@ -1,0 +1,64 @@
+<div class="lead-form">
+
+    <div *ngIf="isSuccess">
+        <h2 [innerHTML]="successMessage"></h2>
+    </div>
+
+    <div *ngIf="!isSuccess">
+        <form (ngSubmit)="onSubmit()" [formGroup]="heroForm" class="form-horizontal">
+
+            <div class="form-group" [class.has-error]="heroForm.controls.name.invalid && submitted">
+                <input type="text" class="form-control" placeholder="Name" formControlName="name">
+                <span *ngIf="heroForm.controls.name.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.email.invalid && submitted">
+                <input type="text" class="form-control" placeholder="Email" required formControlName="email">
+                <span *ngIf="heroForm.controls.email.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.contact.invalid && submitted">
+                <input type="text" class="form-control" placeholder="Contact" required formControlName="contact">
+                <span *ngIf="heroForm.controls.contact.hasError('required') && submitted">
+                {{fieldRequiredError}}
+              </span>
+                <span *ngIf="heroForm.controls.contact.hasError('minlength') && submitted">
+                Your contact must be at least 10 characters long.
+              </span>
+                <span *ngIf="heroForm.controls.contact.hasError('maxlength') && submitted">
+                Your contact cannot exceed 12 characters.
+              </span>
+            </div>
+
+
+            <div class="form-group" [class.has-error]="heroForm.controls.company.invalid && submitted">
+                <input type="text" class="form-control" placeholder="Company Name" required formControlName="company">
+                <span *ngIf="heroForm.controls.company.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.categories.invalid && submitted">
+                <ss-multiselect-dropdown formControlName="categories" [options]="myOptions" [(ngModel)]="optionsModel" [texts]="myTexts" [settings]="mySettings" (ngModelChange)="onItemSelect($event)"></ss-multiselect-dropdown>
+                <span *ngIf="heroForm.controls.categories.invalid && submitted">
+                                {{fieldRequiredError}}
+                              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.remarks.invalid && submitted">
+                <input type="text" class="form-control" placeholder="Your Query" required formControlName="remarks">
+                <span *ngIf="heroForm.controls.remarks.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary btn-block">SUBMIT</button>
+
+        </form>
+    </div>
+</div>

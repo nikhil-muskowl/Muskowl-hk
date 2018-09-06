@@ -1,0 +1,20 @@
+<h2>Get Notified</h2>
+<br>
+<p>SUBSCRIBE TO OUR NEWSLETTER</p>
+<div *ngIf="isSuccess">
+    <h2 [innerHTML]="successMessage"></h2>
+</div>
+
+<div *ngIf="!isSuccess">
+    <form (ngSubmit)="onSubmit()" [formGroup]="subsForm" class="form-horizontal">
+        <div class="input-group" [class.has-error]="subsForm.controls.email.invalid && submitted">
+            <input type="text" class="form-control" value="" placeholder="Your Email" required formControlName="email">
+            <div class="input-group-btn">
+                <button type="submit" class="btn">SUBSCRIBE</button>
+            </div>
+        </div>
+        <span *ngIf="subsForm.controls.email.invalid && submitted" style="color: #fff">
+            {{fieldRequiredError}}
+          </span>
+    </form>
+</div>

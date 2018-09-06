@@ -1,0 +1,40 @@
+<div class="banner-image" style="margin-left: -15px; margin-right: -15px;">
+    <div class="services-banner" [ngStyle]="{'background-image': 'url(' + records.banner + ')'}">
+        <div class="container hidden-xs">
+            <ul class="home-social">
+                <li>
+                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+
+    <div *ngIf="!loading">
+        
+            <div class="blog-heading" id="heading">
+                <h2 class="text-center">{{records.title}}</h2>
+        </div>
+
+        <!-- <h5 class="text-center">{{records.short_description}}</h5> -->
+        <p class="text-center sub-head" [innerHTML]="records.description"></p>
+
+        <div [innerHTML]="records.content"></div>
+    </div>
+
+    <div *ngIf="loading" style="color: #fff;">
+        <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="banner-image" >
+    <div class="services-section">
+        <div class="container">
+            <ul class="home-social">
+                <li>
+                    <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- What we DO -->
+<div id="what-we-do">
+    <div class="section-1">
+        <div class="container">
+            <div class="text-center">
+                <h2>WHAT WE DO</h2>
+                <h4>We've got everything you need to launch and grow your bussiness.</h4>
+                <hr>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" *ngFor="let record of model; let i = index;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="service/{{record.id}}">
+                                <img src="{{record.image}}" width="150" height="150" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-md-6 service-name">
+                            <h3>{{record.name}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="loading" style="color: #333;">
+                <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+            </div>
+            
+            <div class="search-results" infiniteScroll [infiniteScrollDistance]="3" [infiniteScrollUpDistance]="3" [infiniteScrollThrottle]="3000" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()">
+            </div>
+        </div>
+    </div>
+</div>
+
+

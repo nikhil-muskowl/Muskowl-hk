@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('muskowl-hk App', () => {
+describe('muskowl App', () => {
   let page: AppPage;
 
   beforeEach(() => {

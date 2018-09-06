@@ -1,0 +1,17 @@
+.projects-view-banner {
+    /* The image used */
+    /* Set a specific height */
+    min-height: 550px;
+    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1000px) {
+    .projects-view-banner {
+        background-attachment: scroll;
+    }
+}
