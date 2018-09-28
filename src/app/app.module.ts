@@ -11,12 +11,13 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 // front
+import { HeaderComponent } from './front/common/header/header.component';
+import { FooterComponent } from './front/common/footer/footer.component';
 import { HomeComponent } from './front/pages/home/home.component';
 import { AboutComponent } from './front/pages/about/about.component';
 import { ContactComponent } from './front/pages/contact/contact.component';
 import { MenuComponent } from './front/common/menu/menu.component';
-import { HeaderComponent } from './front/common/header/header.component';
-import { FooterComponent } from './front/common/footer/footer.component';
+
 // admin
 import { AdminFooterComponent } from './admin/common/admin-footer/admin-footer.component';
 import { AdminHeaderComponent } from './admin/common/admin-header/admin-header.component';
@@ -36,6 +37,7 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
   slidesPerView: 'auto'

@@ -633,15 +633,11 @@ hr {
 }
 
 .lead-form {
-    padding: 2rem 2rem 2rem 2rem;
-    background-color: rgba(50, 50, 50, 0.8);
-    border-radius: 5%;
-    width: 80%;
+    padding: 2rem 2rem 2rem 2rem;           
 }
 
 .lead-form .form-control {
-    font-size: 1.4rem;
-    border-radius: 0.8rem;
+    font-size: 1.4rem;    
 }
 
 .lead-form .btn-light {
@@ -654,7 +650,6 @@ hr {
 }
 
 .lead-form .btn-primary {
-    padding: 1rem 7rem !important;
     background-color: #82c5e2;
     border-color: #82c5e2;
     border-color: #0d88df;
@@ -666,6 +661,14 @@ hr {
     background: -o-linear-gradient(to bottom, #0D88DF, #4ECBFF);
     background: -moz-linear-gradient(to bottom, #0D88DF, #4ECBFF);
     background: linear-gradient(to bottom, #0D88DF, #4ECBFF);
+}
+@media only screen and (max-width: 1000px) {
+    .lead-form {
+        padding: 2rem 2rem 2rem 2rem;
+        background-color: rgba(50, 50, 50, 0.8);
+        border-radius: 5%;
+        width: 100%;
+    }
 }
 
 .dropdown-item {
